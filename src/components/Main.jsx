@@ -1,7 +1,7 @@
-function Main() {
+function Main({ data }) {
     return (
         <div className="imgContainer">
-            <img src="mars.png" alt="nasa picture of the day" className="bgImage" />
+            <img src={data.url} alt="nasa picture of the day" className="bgImage" />
         </div>
     )
 }

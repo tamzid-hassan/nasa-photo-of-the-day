@@ -56,11 +56,11 @@ footer div:nth-child(2) {
 }
 
 footer h2 {
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 
 footer h1 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 200;
 }
 
@@ -71,18 +71,17 @@ footer button {
   outline: none;
   cursor: pointer;
   transition: 250ms ease-in-out;
-  padding: 1rem;
 }
 
 footer button i {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 footer button:hover {
   opacity: 0.7;
   color: aqua;
-
 }
+
 
 .bgGradient {
   position: absolute;
@@ -123,6 +122,33 @@ footer button:hover {
 
 .sidebarContents div {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.sidebarContents div p:nth-child(1) {
+  font-weight: 200;
+  font-size: 1.2rem;
+  opacity: .8;
+}
+
+.sidebarContents div p:last-child {
+  font-weight: 200;
+  font-size: 1rem;
+  text-wrap: pretty;
+}
+
+.sidebarContents h2 {
+  font-size: 1.8rem;
+  letter-spacing: 0.3rem;
+  font-weight: 600;
+}
+
+.sidebarContents h2 {
+  font-size: 1.8rem;
+  letter-spacing: 0.3rem;
+  font-weight: 600;
 }
 
 .sidebarContents button {
@@ -136,9 +162,39 @@ footer button:hover {
   padding: 1rem 0;
 }
 
+.sidebarContents button i {
+  font-size: 1rem;
+}
+
 .sidebarContents button:hover {
   opacity: 0.7;
+  color: aqua;
+  margin-left: .3rem;
 }
+
+.loadingState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.loadingState i {
+  font-size: 3rem;
+  opacity: .5;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  from {
+    transform: rotate(360deg);
+  }
+}
+
 
 @media (width > 640px) {
   .sidebar {
@@ -152,5 +208,22 @@ footer button:hover {
   .sidebarContents {
     margin: unset;
     width: 100%;
+  }
+
+  footer h2 {
+    font-size: 3rem;
+  }
+
+  footer h1 {
+    font-size: 1.25rem;
+    font-weight: 200;
+  }
+
+  button i {
+    font-size: 1.3rem !important;
+  }
+
+  button i:hover {
+    font-size: 1.4rem !important;
   }
 }

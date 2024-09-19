@@ -1,18 +1,18 @@
-function SideBar() {
+function SideBar({ setShowModal, data }) {
     return (
         <div className="sidebar">
             <div className="bgOverlay"></div>
             <div className="sidebarContents">
-                <h2>THe Brutal asdihzxlkc z</h2>
+                <h2>{data.copyright}</h2>
                 <div>
-                    <p>Description</p>
-                    <p>asdzxcklhzxlkchalsi kdjalisdjailskjd lkzxjc lkzxjcklj asd </p>
+                    <p>{data.date}</p>
+                    <p>{data.explanation}</p>
                 </div>
-                <button>
+                <button onClick={() => setShowModal(prev => !prev)}>
                     <i className="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
-        </div>
+        </div >
     )
 }
 
