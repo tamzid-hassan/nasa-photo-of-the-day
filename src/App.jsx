@@ -17,8 +17,8 @@ function App() {
   const url = `${NASA_API_ApiEndPoint}?api_key=${NASA_API_KEY}`
 
 
-  console.log(NASA_API_KEY);
-  console.log(NASA_API_ApiEndPoint);
+  // console.log(NASA_API_KEY);
+  // console.log(NASA_API_ApiEndPoint);
 
   async function fetchNasaData() {
 
@@ -29,7 +29,8 @@ function App() {
 
     if (localStorageData) {
       setData(JSON.parse(localStorageData))
-      console.log("Fetched from LocalStorage", localStorageData)
+      // console.log("Fetched from LocalStorage", localStorageData)
+      console.log("Fetched from LocalStorage")
     } else {
 
       //Deleting previous KEY and DATA from localstorage
@@ -45,7 +46,9 @@ function App() {
         localStorage.setItem(localStorageKey, JSON.stringify(result))
         setData(result)
 
-        console.log("Fetched from API", result)
+        // console.log("Fetched from API", result)
+        console.log("Fetched from API")
+
       } catch (error) {
         console.log("Failed to fetch data from Nasa: ", error)
       }
