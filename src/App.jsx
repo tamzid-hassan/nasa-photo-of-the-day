@@ -8,7 +8,7 @@ import conf from "./conf/conf"
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [data, setData] = useState(null)
-  const [loading, setloading] = useState(null)
+  // const [loading, setloading] = useState(null)
 
 
   const NASA_API_KEY = conf.nasaApiKey;
@@ -21,16 +21,37 @@ function App() {
   console.log(NASA_API_ApiEndPoint);
 
   async function fetchNasaData() {
-    try {
-      const response = await fetch(url)
-      const result = await response.json()
 
-      setData(result)
+    //Checking if data is cached in Local Storage
+    const today = (new Date()).toDateString()
+    const localStorageKey = `NASA-${today}`
+    const localStorageData = localStorage.getItem(localStorageKey);
 
-      console.log(result)
-    } catch (error) {
-      console.log("Failed to fetch data from Nasa: ", error)
+    if (localStorageData) {
+      setData(JSON.parse(localStorageData))
+      console.log("Fetched from LocalStorage", localStorageData)
+    } else {
+
+      //Deleting previous KEY and DATA from localstorage
+      localStorage.clear()
+
+      //As no data in Local Storage, so getting DATA from API
+      try {
+        const response = await fetch(url)
+        const result = await response.json()
+
+
+        //Setting both Local Storage and State Data
+        localStorage.setItem(localStorageKey, JSON.stringify(result))
+        setData(result)
+
+        console.log("Fetched from API", result)
+      } catch (error) {
+        console.log("Failed to fetch data from Nasa: ", error)
+      }
     }
+
+
   }
 
   useEffect(() => {
@@ -38,7 +59,7 @@ function App() {
     let getDataTimeout = setTimeout(() => {
       fetchNasaData();
 
-    }, 2000);
+    }, 1000);
 
     return () => {
       clearTimeout(getDataTimeout)
