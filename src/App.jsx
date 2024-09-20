@@ -72,7 +72,7 @@ function App() {
 
   return (
     <>
-      {data ? (<Main data={data} />) : (
+      {data ? (<Main data={data} setShowModal={setShowModal} />) : (
         <div className="loadingState"><i className="fa-solid fa-spinner"></i></div>
       )}
 

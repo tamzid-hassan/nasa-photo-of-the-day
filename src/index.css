@@ -57,12 +57,47 @@ footer div:nth-child(2) {
 }
 
 footer h2 {
-  font-size: 1.5rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+
+  position: relative;
+  animation: revealUp 1s ease-out;
+}
+
+
+@keyframes revealUp {
+  from {
+    bottom: -50px;
+  }
+
+  to {
+    bottom: 0px;
+  }
 }
 
 footer h1 {
-  font-size: 1rem;
-  font-weight: 200;
+  font-family: "Poiret One", system-ui;
+  font-weight: 400;
+  letter-spacing: .12rem;
+  font-size: .9rem;
+
+
+  position: relative;
+  opacity: 0;
+  animation: fadeUp .8s .8s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    left: -50px;
+  }
+
+  to {
+    opacity: 1;
+    left: 0px;
+  }
 }
 
 footer button {
@@ -72,6 +107,7 @@ footer button {
   outline: none;
   cursor: pointer;
   transition: 250ms ease-in-out;
+
 }
 
 footer button i {
@@ -125,31 +161,30 @@ footer button:hover {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 1rem;
+
+  font-family: "Lato", sans-serif;
 }
 
-.sidebarContents div p:nth-child(1) {
-  font-weight: 200;
+.sidebarContents h2 {
+  font-family: "Poiret One", system-ui;
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: .3rem;
+}
+
+
+.sidebarContents div p:first-child {
   font-size: 1.2rem;
-  opacity: .8;
+  font-weight: 700;
+  opacity: .5;
 }
 
 .sidebarContents div p:last-child {
-  font-weight: 200;
   font-size: 1rem;
+  font-weight: 300;
   text-wrap: pretty;
-}
-
-.sidebarContents h2 {
-  font-size: 1.8rem;
-  letter-spacing: 0.3rem;
-  font-weight: 600;
-}
-
-.sidebarContents h2 {
-  font-size: 1.8rem;
-  letter-spacing: 0.3rem;
-  font-weight: 600;
+  letter-spacing: .05rem;
 }
 
 .sidebarContents button {
@@ -212,12 +247,11 @@ footer button:hover {
   }
 
   footer h2 {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   footer h1 {
-    font-size: 1.25rem;
-    font-weight: 200;
+    font-size: 2rem;
   }
 
   button i {
@@ -226,5 +260,17 @@ footer button:hover {
 
   button i:hover {
     font-size: 1.4rem !important;
+  }
+
+  .sidebarContents h2 {
+    font-size: 3rem;
+  }
+
+  .sidebarContents div p:first-child {
+    font-size: 1.8rem;
+  }
+
+  .sidebarContents div p:last-child {
+    font-size: 1.2rem;
   }
 }

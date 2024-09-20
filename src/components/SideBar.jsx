@@ -1,6 +1,6 @@
 function SideBar({ setShowModal, data }) {
     return (
-        <div className="sidebar">
+        <div className="sidebar" >
             <div className="bgOverlay"></div>
             <div className="sidebarContents">
                 <h2>{data.copyright}</h2>
